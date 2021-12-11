@@ -6,7 +6,7 @@ module.exports = {
     main: './src/javascripts/main.js'
   },
   mode: 'development',
-  devtool: 'inline-source-map',
+  devtool: false, //'inline-source-map',
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     // static: path.join(__dirname, 'dist'), // Webpack 5
@@ -18,6 +18,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'javascripts/[name].js',
+    publicPath: '/',
     // clean: true // Webpack 5
   },
   module: {
@@ -41,7 +42,7 @@ module.exports = {
           options: { 
             name: '[name].[ext]',
             outputPath: (url, resourcePath, context) => {
-              return resourcePath.includes(`${path.sep}images${path.sep}`) ? `images/${url}` : url
+              return resourcePath.substring(`${__dirname}${path.sep}src${path.sep}`.length)
             }
           }
         }]
