@@ -44,13 +44,10 @@ module.exports = {
           }
         }
       }, {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
+        test: /\.(css|scss)$/,
+        use: [MiniCssExtractPlugin.loader, {loader: 'css-loader', options: {url: false}}, 'postcss-loader', 'sass-loader']
       }, {
-        test: /\.scss$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
-      }, {
-        test: /\.(json|txt|dat|png|jpg|jpeg|gif|svg|eot|ttf|woff|woff2)$/i,
+        test: /\.(txt|dat|png|jpg|jpeg|gif|svg|ico|eot|ttf|woff|woff2)$/i,
         use: [{
           loader: 'file-loader',
           options: { 
