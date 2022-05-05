@@ -10,7 +10,6 @@ glob.sync('./src/**/*.html').map(file => {
     input[f[0]] = f[1]
 })
 
-console.log(input)
 export default defineConfig({
   root: 'src',
   build: {

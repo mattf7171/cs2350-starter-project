@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "vite",
+    "build": "vite build",
     "deploy": "vite build",
     "preview": "vite preview"
   },
