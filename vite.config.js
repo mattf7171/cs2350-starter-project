@@ -1,27 +1,42 @@
-const path = require('path')
-const glob = require('glob')
-import { defineConfig } from 'vite'
+
+const path = require("path")
+const glob = require("glob")
+
+import { defineConfig } from "vite"
+import eslint from "@rollup/plugin-eslint"
 
 let input = {}
 
-glob.sync('./src/**/*.html').map(file => {
-  return [file.substring(`.${path.sep}src${path.sep}`.length), file]
-}).forEach( f => {
+glob
+  .sync("./src/**/*.html")
+  .map((file) => {
+    return [file.substring(`.${path.sep}src${path.sep}`.length), file]
+  })
+  .forEach((f) => {
     input[f[0]] = f[1]
-})
+  })
 
 export default defineConfig({
-  root: 'src',
+  root: "src",
   build: {
-    outDir: '../dist',
+    manifest: true,
+    outDir: "../dist",
     emptyOutDir: true,
     rollupOptions: {
       input
-    }
+    },
   },
   server: {
     port: 8080,
-    open: true
+    open: "/",
   },
-  plugins: []
+  plugins: [
+    {
+      ...eslint({
+        include: ["src/**/*.js"],
+      }),
+      enforce: "pre",
+      apply: "build",
+    },
+  ],
 })
