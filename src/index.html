@@ -1,29 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Project Starter</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="index,follow" />
-    <meta name="description" content="TODO: A starter project for ..." />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./stylesheets/main.css">
+  <title>Document</title>
+</head>
+<body>
 
-    <link rel="stylesheet" href="./stylesheets/main.css" />
-  </head>
+  <h1>Image gallery using Flexbox</h1>
 
-  <body>
-    <!-- Your HTML goes here -->
-    <h1 class="display-2 text-center my-5 py-5">
-      <span class="d-block py-5">
-        <i class="bi bi-filetype-html text-primary"></i>
-        <i class="bi bi-filetype-css text-danger"></i>
-        <i class="bi bi-filetype-js text-success"></i>
-      </span>
+  <div class="gallery">
+    <div class="top">
+      <div class="left">
+        <div class="image">
+          <img src="./images/Image_1.jpg" alt="">
+        </div>
+        <div class="image">
+          <img src="./images/Skyline.jpg" alt="">
+        </div>
+        <div class="image">
+          <img src="./images/Jersey.jpg" alt="">
+        </div>
+      </div>
+      <div class="middle">
+        <div class="image">
+          <img src="./images/Harlem.jpg" alt="">
+        </div>
+        <div class="image">
+          <img src="./images/Bull.jpg" alt="">
+        </div>
+      </div>
+      <div class="right">
+        <div class="top">
+          <div class="image">
+            <img src="./images/Austin.jpg" alt="">
+          </div>
+          <div class="image">
+            <img src="./images/Cow.jpg" alt="">
+          </div>
+          <div class="image">
+            <img src="./images/America.jpg" alt="">
+          </div>
+        </div>
+        <div class="image middle">
+          <img src="./images/Liberty.jpg" alt="">
+        </div>
+        <div class="bottom">
+          <div class="image">
+            <img src="./images/SanFran.jpg" alt="">
+          </div>
+          <div class="image">
+            <img src="./images/DC.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom"></div>
+  </div>
 
-      Welcome to CS 2350! This is a good template for web development!
 
-      <a href=""></a>
-    </h1>
 
-    <script type="module" src="./javascripts/main.js"></script>
-  </body>
+
+
+  <script src="./javascripts/main.js"></script>
+</body>
 </html>
